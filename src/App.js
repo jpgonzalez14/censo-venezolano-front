@@ -33,10 +33,24 @@ function ButtonAppBar() {
 }
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { users: [] };
+  }
+  componentDidMount() {
+    fetch('https://censovenezolanoback.herokuapp.com/users/getUsers') // returns a promise object
+      .then(result => result.json()) // still returns a promise object, U need to chain it again
+      .then(users => this.setState({ users }));
+  }
   render() {
     return (
       <div className="App">
         <ButtonAppBar />
+        <ul>
+          {this.state.users.map(user => (
+            <li key={user.name}>{user.email}</li>
+          ))}
+        </ul>
       </div>
     );
   }
