@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 class Footer extends Component {
   render() {
     return (
-      <footer className="page-footer font-small blue">
-        <div className="container">
+      <footer className="page-footer font-small dark-primary-color">
+        <div className="container-fluid default-primary-color">
           <div className="row">
-            <div className="col-md-12 py-5">
+            <div className="col-md-12 py-4">
               <div className="mb-5 flex-center">
                 <a>
                   <i className="fab fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x">
@@ -36,9 +36,25 @@ class Footer extends Component {
           </div>
         </div>
 
-        <div className="footer-copyright text-center py-3">
+        <div className="footer-copyright text-center py-3 text-primary-color">
           © 2018 Copyright:
-          <a href="http://juanpgonzalez.com/"> juanpgonzalez.com</a>
+          <a
+            className="text-primary-color"
+            href="http://juanpgonzalez.com/"
+            target="_blank"
+          >
+            {' '}
+            Juan Pablo{' '}
+          </a>
+          &
+          <a
+            className="text-primary-color"
+            href="http://rangel10.github.io/"
+            target="_blank"
+          >
+            {' '}
+            Ricardo Angel{' '}
+          </a>
         </div>
       </footer>
     );
