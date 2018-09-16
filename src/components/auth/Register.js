@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import classnames from 'classnames';
+
 class Register extends Component {
   //component state
   constructor() {
@@ -37,6 +39,7 @@ class Register extends Component {
       .catch(err => this.setState({ errors: err.response.data }));
   }
   render() {
+    const { errors } = this.state;
     return (
       <div className="container-fluid">
         <br />
