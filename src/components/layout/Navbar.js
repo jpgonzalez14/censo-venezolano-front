@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light dark-primary-color">
+      <nav className="navbar navbar-expand-lg navbar-dark dark-primary-color">
         <button
           className="navbar-toggler"
           type="button"

@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="page-footer font-small dark-primary-color">
-        <div className="container-fluid default-primary-color">
+        <div className="container-fluid default-primary-color centrado">
           <div className="row">
             <div className="col-md-12 py-4">
               <div className="mb-5 flex-center">
