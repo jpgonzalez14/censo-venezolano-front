@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 class Register extends Component {
   //component state
   constructor() {
@@ -31,7 +31,10 @@ class Register extends Component {
       city: this.state.city,
       password: this.state.password
     };
-    console.log(newUser);
+    axios
+      .post('https://censovenezolanoback.herokuapp.com/users/register', newUser)
+      .then(res => console.log(res.data))
+      .catch(err => this.setState({ errors: err.response.data }));
   }
   render() {
     return (
