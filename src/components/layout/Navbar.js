@@ -17,9 +17,9 @@ class Navbar extends Component {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             Hidden brand
-          </a>
+          </Link>
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item active">
               <Link className="nav-link" to="/">
