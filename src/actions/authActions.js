@@ -48,6 +48,16 @@ export const setCurrentUser = decoded => {
     payload: decoded
   };
 };
+//logout current user
+export const logoutUser = () => dispatch => {
+  //remove token from local storage
+  localStorage.removeItem('jwtToken');
+  //remove auth header
+  setAuthToken(false);
+  //set cuurent user to empty object {}
+  dispatch(setCurrentUser({}));
+};
+
 /*axios
   .post('https://censovenezolanoback.herokuapp.com/users/register', newUser)
   .then(res => console.log(res.data))

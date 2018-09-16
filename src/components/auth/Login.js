@@ -10,14 +10,21 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: 'test@test.com',
-      password: 'test',
+      email: '',
+      password: '',
       gettoken: true,
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
@@ -38,7 +45,9 @@ class Login extends Component {
       password: this.state.password,
       gettoken: true
     };
-    this.props.loginUser(loginRequest);
+    if (loginRequest.email !== '' && loginRequest.password !== '') {
+      this.props.loginUser(loginRequest);
+    }
   }
   render() {
     const { errors } = this.state;
