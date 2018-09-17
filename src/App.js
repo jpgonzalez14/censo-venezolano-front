@@ -17,6 +17,7 @@ import Register from './components/auth/Register';
 //dashboard
 import PersonList from './components/dashboard/PersonList';
 import Info from './components/dashboard/Info';
+import Censo from './components/censo/Censo';
 
 import './App.css';
 
@@ -46,6 +47,7 @@ class App extends React.Component {
             <div className="container">
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
+              <Route exact path="/censo" component={Censo} />
               <div className="container-fluid">
                 <Route exact path="/dashboard" component={Info} />
               </div>

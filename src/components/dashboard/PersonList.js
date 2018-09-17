@@ -29,11 +29,18 @@ class PersonList extends React.Component {
 
     return (
       <div className="col-xs-12 col-md-9">
-        <div>
-          <div>
-            <h2>Locations</h2>
-          </div>
-        </div>
+        <h2>Filterable Table</h2>
+        <p>
+          Type something in the input field to search the table for first names,
+          last names or emails:
+        </p>
+        <input
+          class="form-control"
+          id="myInput"
+          type="text"
+          placeholder="Search.."
+        />
+        <br />
         <div className="table-wrapper-scroll-y">
           <table className="table table-striped">
             <thead>

@@ -8,7 +8,7 @@ class PieGraph extends React.Component {
     this.state = {
       data: [
         {
-          values: [],
+          values: [300, 200, 500],
           labels: ['Residential', 'Non-Residential', 'Utility'],
           type: 'pie'
         }

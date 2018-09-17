@@ -55,6 +55,8 @@ class Login extends Component {
     return (
       <div className="container-fluid">
         <br />
+        <h1>Login</h1>
+        <br />
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Email address</label>
@@ -79,18 +81,12 @@ class Login extends Component {
               onChange={this.onChange}
             />
           </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label">Check me out</label>
-          </div>
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
+        <br />
+        <br />
         <br />
       </div>
     );

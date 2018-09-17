@@ -22,6 +22,31 @@ export const registerUser = (userData, history) => dispatch => {
     );
 };
 
+//register user
+export const registerPerson = (personData, censoData, history) => dispatch => {
+  axios
+    .post(
+      'https://censovenezolanoback.herokuapp.com/persons/register',
+      personData
+    )
+    .then(res => console.log('funciona'))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+  axios
+    .post('https://censovenezolanoback.herokuapp.com/censos/censo', censoData)
+    .then(res => history.push('/'))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 //login get user - token
 export const loginUser = userData => dispatch => {
   axios

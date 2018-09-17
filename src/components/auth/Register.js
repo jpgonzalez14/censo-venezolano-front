@@ -69,6 +69,9 @@ class Register extends Component {
     return (
       <div className="container-fluid">
         <br />
+        <br />
+        <h1>Sign Up</h1>
+        <br />
         <form onSubmit={this.onSubmit}>
           <div className="form-row">
             <div className="form-group col-md-6">
@@ -138,20 +141,12 @@ class Register extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="gridCheck"
-              />
-              <label className="form-check-label">Check me out</label>
-            </div>
-          </div>
+
           <button type="submit" className="btn btn-primary">
             Sign in
           </button>
         </form>
+        <br />
         <br />
       </div>
     );
