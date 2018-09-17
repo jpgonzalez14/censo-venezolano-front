@@ -75,7 +75,7 @@ class Register extends Component {
         <form onSubmit={this.onSubmit}>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label className="primary-text-color">Email</label>
+              <label className="secondary-text-color">Email</label>
               <input
                 type="email"
                 className="form-control"
@@ -86,7 +86,7 @@ class Register extends Component {
               />
             </div>
             <div className="form-group col-md-6">
-              <label className="primary-text-color">Password</label>
+              <label className="secondary-text-color">Password</label>
               <input
                 type="password"
                 className="form-control"
@@ -98,7 +98,7 @@ class Register extends Component {
             </div>
           </div>
           <div className="form-group">
-            <label className="primary-text-color">Name</label>
+            <label className="secondary-text-color">Name</label>
             <input
               type="text"
               className="form-control"
@@ -109,7 +109,7 @@ class Register extends Component {
             />
           </div>
           <div className="form-group">
-            <label className="primary-text-color">Org</label>
+            <label className="secondary-text-color">Org</label>
             <input
               type="text"
               className="form-control"
@@ -121,7 +121,7 @@ class Register extends Component {
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label className="primary-text-color">City</label>
+              <label className="secondary-text-color">City</label>
               <input
                 type="text"
                 className="form-control"
@@ -131,7 +131,7 @@ class Register extends Component {
               />
             </div>
             <div className="form-group col-md-6">
-              <label className="primary-text-color">Country</label>
+              <label className="secondary-text-color">Country</label>
               <input
                 type="text"
                 className="form-control"

@@ -28,8 +28,9 @@ class PersonList extends React.Component {
     }
 
     return (
-      <div className="col-xs-12 col-md-9">
-        <h2>Filterable Table</h2>
+      <div className="col-xs-12 col-md-8">
+        <br />
+        <h2 className="primary-text-color">Filterable Table</h2>
         <p>
           Type something in the input field to search the table for first names,
           last names or emails:
@@ -45,15 +46,25 @@ class PersonList extends React.Component {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th className="secondary-text-color" scope="col">
+                  Id
+                </th>
+                <th className="secondary-text-color" scope="col">
+                  Name
+                </th>
+                <th className="secondary-text-color" scope="col">
+                  Email
+                </th>
+                <th className="secondary-text-color" scope="col">
+                  Phone
+                </th>
               </tr>
             </thead>
             <tbody>{profileItems}</tbody>
           </table>
         </div>
+        <br />
+        <br />
       </div>
     );
   }

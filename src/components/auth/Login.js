@@ -59,7 +59,7 @@ class Login extends Component {
         <br />
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label className="primary-text-color">Email address</label>
+            <label className="secondary-text-color">Email address</label>
             <input
               type="email"
               className="form-control"
@@ -71,7 +71,7 @@ class Login extends Component {
             />
           </div>
           <div className="form-group">
-            <label className="primary-text-color">Password</label>
+            <label className="secondary-text-color">Password</label>
             <input
               type="password"
               className="form-control"

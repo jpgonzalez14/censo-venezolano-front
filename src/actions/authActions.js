@@ -88,7 +88,7 @@ export const logoutUser = () => dispatch => {
   dispatch(setCurrentUser({}));
 };
 
-// Get all profiles
+// Get all persons
 export let getAllPersons = () => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -106,7 +106,7 @@ export let getAllPersons = () => dispatch => {
       })
     );
 };
-//Profile Loading
+//person Loading
 export let setProfileLoading = () => {
   return {
     type: PERSONS_LOADING
