@@ -55,11 +55,11 @@ class Login extends Component {
     return (
       <div className="container-fluid">
         <br />
-        <h1>Login</h1>
+        <h1 className="primary-text-color">Login</h1>
         <br />
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Email address</label>
+            <label className="primary-text-color">Email address</label>
             <input
               type="email"
               className="form-control"
@@ -71,7 +71,7 @@ class Login extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Password</label>
+            <label className="primary-text-color">Password</label>
             <input
               type="password"
               className="form-control"

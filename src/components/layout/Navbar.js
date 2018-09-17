@@ -14,6 +14,11 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         <li className="nav-item active">
+          <Link className="nav-link" to="/">
+            Datos Estadisticos
+          </Link>
+        </li>
+        <li className="nav-item active">
           <Link className="nav-link" to="/dashboard">
             {user.name}
           </Link>
@@ -33,7 +38,7 @@ class Navbar extends Component {
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         <li className="nav-item active">
           <Link className="nav-link" to="/">
-            Home
+            Datos Estadisticos
           </Link>
         </li>
         <li className="nav-item">
@@ -68,9 +73,10 @@ class Navbar extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <Link className="navbar-brand" to="/">
-            Hidden brand
+            VeCenso
           </Link>
           {isAuthenticated ? authLinks : guestLinks}
+          <ul className="form-inline my-2 my-lg-0" />
         </div>
       </nav>
     );

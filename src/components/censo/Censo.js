@@ -88,13 +88,13 @@ class Censo extends Component {
     return (
       <div className="container-fluid">
         <br />
-        <h1>Ingresa tus datos:</h1>
+        <h1 className="primary-text-color">Ingresa tus datos:</h1>
         <small className="secondary-text-color">
           Todos los campos son obligatorios
         </small>
         <br />
         <br />
-        <h5>Informacion de contacto:</h5>
+        <h5 className="primary-text-color">Informacion de contacto:</h5>
         <br />
         <form onSubmit={this.onSubmit}>
           <div className="form-row">
@@ -146,7 +146,7 @@ class Censo extends Component {
 
           <hr />
 
-          <h5>Informacion personal:</h5>
+          <h5 className="primary-text-color">Informacion personal:</h5>
           <br />
           <div className="form-row">
             <div className="form-group col-md-2">
@@ -155,6 +155,8 @@ class Censo extends Component {
                 type="number"
                 className="form-control"
                 name="edad"
+                min="0"
+                max="130"
                 value={this.state.edad}
                 onChange={this.onChange}
               />
@@ -199,7 +201,7 @@ class Censo extends Component {
               </select>
             </div>
 
-            <div className="form-group col-md-10">
+            <div className="form-group col-md-7">
               <label className="secondary-text-color">Trabajo actual</label>
               <input
                 type="text"
@@ -210,12 +212,14 @@ class Censo extends Component {
               />
             </div>
 
-            <div className="form-group col-md-2">
-              <label className="secondary-text-color">ingresos</label>
+            <div className="form-group col-md-5">
+              <label className="secondary-text-color">Ingresos</label>
               <input
                 type="number"
                 className="form-control"
                 name="ingresos"
+                min="0"
+                max="99999999999999"
                 value={this.state.ingresos}
                 onChange={this.onChange}
               />
@@ -244,7 +248,7 @@ class Censo extends Component {
 
           <hr />
 
-          <h5>Lugar donde emigra:</h5>
+          <h5 className="primary-text-color">Lugar donde emigra:</h5>
           <br />
           <div className="form-row">
             <div className="form-group col-md-6">
