@@ -9,15 +9,18 @@ class SideMenu extends Component {
     const { isAuthenticated, user } = this.props.auth;
     const authLinks = (
       <div className="col-md-12">
-        <h2> {user.name} </h2>{' '}
-        <p>
-          {' '}
-          <strong> Org: </strong> {user.org}{' '}
-        </p>{' '}
-        <p>
-          {' '}
-          <strong> Email: </strong> {user.email}{' '}
-        </p>
+        <div className="card">
+          <div className="card-body">
+            <h1 className="card-title">{user.name}</h1>
+            <h6 className="card-subtitle mb-2 text-muted">
+              <strong> Org: </strong>
+              {user.org}
+            </h6>
+            <p className="card-text">
+              <strong> Email: </strong> {user.email}
+            </p>
+          </div>
+        </div>
       </div>
     );
     return (

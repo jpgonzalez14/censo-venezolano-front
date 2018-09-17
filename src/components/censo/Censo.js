@@ -163,12 +163,12 @@ class Censo extends Component {
             </div>
 
             <div className="form-group col-md-5">
-              <label className="secondary-text-color" htmlFor="sel1">
+              <label className="secondary-text-color" htmlFor="prof">
                 Profesion:
               </label>
               <select
                 className="form-control"
-                id="sel1"
+                id="prof"
                 name="enfermedades"
                 onChange={this.onChange}
               >
@@ -183,21 +183,21 @@ class Censo extends Component {
               </select>
             </div>
             <div className="form-group col-md-5">
-              <label className="secondary-text-color" htmlFor="sel1">
+              <label className="secondary-text-color" htmlFor="edu">
                 Ultimo nivel de educacion:
               </label>
               <select
                 className="form-control"
-                id="sel1"
+                id="edu"
                 name="enfermedades"
                 onChange={this.onChange}
               >
                 <option value={'Ninguna'}>Ninguna</option>
-                <option value={'Diabetes'}>Bachiller</option>
-                <option value={'Alzheimer'}>Pregrado</option>
-                <option value={'Alzheimer'}>Posgrado</option>
-                <option value={'Alzheimer'}>Maestria</option>
-                <option value={'Alzheimer'}>Doctorado</option>
+                <option value={'Bachiller'}>Bachiller</option>
+                <option value={'Pregrado'}>Pregrado</option>
+                <option value={'Posgrado'}>Posgrado</option>
+                <option value={'Maestria'}>Maestria</option>
+                <option value={'Doctorado'}>Doctorado</option>
               </select>
             </div>
 
@@ -226,12 +226,12 @@ class Censo extends Component {
             </div>
 
             <div className="form-group col-md-12">
-              <label className="secondary-text-color" htmlFor="sel1">
+              <label className="secondary-text-color" htmlFor="enf">
                 Enfermedades:
               </label>
               <select
                 className="form-control"
-                id="sel1"
+                id="enf"
                 name="enfermedades"
                 onChange={this.onChange}
               >
@@ -262,14 +262,23 @@ class Censo extends Component {
               />
             </div>
             <div className="form-group col-md-6">
-              <label className="secondary-text-color">Pais</label>
-              <input
-                type="text"
+              <label className="secondary-text-color" htmlFor="paiss">
+                Pais
+              </label>
+              <select
                 className="form-control"
+                id="paiss"
                 name="pais"
-                value={this.state.pais}
                 onChange={this.onChange}
-              />
+              >
+                <option>Seleccione un pais</option>
+                <option value={'Argentina'}>Argentina</option>
+                <option value={'Bolivia'}>Bolivia</option>
+                <option value={'Brasil'}>Brasil</option>
+                <option value={'Chile'}>Chile</option>
+                <option value={'Colombia'}>Colombia</option>
+                <option value={'Ecuador'}>Ecuador</option>
+              </select>
             </div>
             <div className="form-group col-md-6">
               <label className="secondary-text-color">Fecha de Ingreso</label>
