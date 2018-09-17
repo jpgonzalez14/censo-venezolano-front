@@ -16,7 +16,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 //dashboard
 import PersonList from './components/dashboard/PersonList';
-import SideMenu from './components/dashboard/SideMenu';
+import Info from './components/dashboard/Info';
 
 import './App.css';
 
@@ -46,9 +46,8 @@ class App extends React.Component {
             <div className="container">
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
-              <div className="row">
-                <Route exact path="/dashboard" component={SideMenu} />
-                <Route exact path="/dashboard" component={PersonList} />
+              <div className="container-fluid">
+                <Route exact path="/dashboard" component={Info} />
               </div>
             </div>
             <Footer />

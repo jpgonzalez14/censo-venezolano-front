@@ -6,7 +6,7 @@ import { getAllPersons } from '../../actions/authActions';
 import Dashboard from './Dashboard';
 
 class PersonList extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.getAllPersons();
   }
 

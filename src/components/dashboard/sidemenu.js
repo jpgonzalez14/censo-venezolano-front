@@ -5,11 +5,6 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 
 class SideMenu extends Component {
-  componentDidMount() {
-    if (!this.props.auth.isAuthenticated) {
-      this.props.history.push('/login');
-    }
-  }
   render() {
     const { isAuthenticated, user } = this.props.auth;
     const authLinks = (
