@@ -125,6 +125,7 @@ class Register extends Component {
               <input
                 type="text"
                 className="form-control"
+                placeholder="Ciudad"
                 name="city"
                 value={this.state.city}
                 onChange={this.onChange}
@@ -135,6 +136,7 @@ class Register extends Component {
               <input
                 type="text"
                 className="form-control"
+                placeholder="Pais"
                 name="country"
                 value={this.state.country}
                 onChange={this.onChange}

@@ -136,7 +136,7 @@ class Censo extends Component {
               <input
                 type="number"
                 className="form-control"
-                placeholder="Numer de telefono"
+                placeholder="Numero de telefono"
                 name="phone"
                 value={this.state.phone}
                 onChange={this.onChange}
@@ -154,6 +154,7 @@ class Censo extends Component {
               <input
                 type="number"
                 className="form-control"
+                placeholder="Edad"
                 name="edad"
                 min="0"
                 max="130"
@@ -206,6 +207,7 @@ class Censo extends Component {
               <input
                 type="text"
                 className="form-control"
+                placeholder="En que esta trabajando actualmente"
                 name="queHace"
                 value={this.state.queHace}
                 onChange={this.onChange}
@@ -217,6 +219,7 @@ class Censo extends Component {
               <input
                 type="number"
                 className="form-control"
+                placeholder="Ingresos en dolares"
                 name="ingresos"
                 min="0"
                 max="99999999999999"
@@ -256,6 +259,7 @@ class Censo extends Component {
               <input
                 type="text"
                 className="form-control"
+                placeholder="Ingrese el nombre de la ciudad"
                 name="ciudad"
                 value={this.state.ciudad}
                 onChange={this.onChange}
