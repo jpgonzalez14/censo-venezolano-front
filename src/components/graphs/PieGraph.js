@@ -1,5 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import axios from 'axios';
 
 class PieGraph extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class PieGraph extends React.Component {
     this.state = {
       data: [
         {
-          values: [19, 26, 55],
+          values: [],
           labels: ['Residential', 'Non-Residential', 'Utility'],
           type: 'pie'
         }
@@ -19,6 +20,24 @@ class PieGraph extends React.Component {
       frames: [],
       config: {}
     };
+  }
+
+  componentWillMount() {
+    fetch('https://censovenezolanoback.herokuapp.com/censos/estadisticas')
+      .then(res => res.json())
+      .then(findResponse => {
+        var length = findResponse.estadisticas.edad.length;
+        var prueba = [4];
+        console.log(findResponse.estadisticas.edad);
+        for (var i = 0; i < 4; i++) {
+          prueba[i] = findResponse.estadisticas.edad[i];
+          console.log(findResponse.estadisticas.edad[i]);
+        }
+
+        this.setState({
+          values: prueba
+        });
+      });
   }
 
   render() {

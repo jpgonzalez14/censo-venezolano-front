@@ -24,16 +24,28 @@ class PersonList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="col-xs-12 col-md-9">
         <div>
           <div>
             <h2>Locations</h2>
           </div>
         </div>
         <div>
-          {this.state.persons.map(persons => (
-            <PersonCard key={persons.id} {...persons} />
-          ))}
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.persons.map(persons => (
+                <PersonCard key={persons.id} {...persons} />
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     );
@@ -42,16 +54,12 @@ class PersonList extends React.Component {
 
 const PersonCard = props => {
   return (
-    <div>
-      <hr />
-      <p>
-        <b>Name:</b> {props.name}
-      </p>
-      <p>
-        <b>Region:</b> {props.email}
-      </p>
-      <hr />
-    </div>
+    <tr>
+      <th scope="row">{props.id}</th>
+      <td>{props.name}</td>
+      <td>{props.email}</td>
+      <td>{props.phone}</td>
+    </tr>
   );
 };
 

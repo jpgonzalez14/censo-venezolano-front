@@ -13,7 +13,7 @@ class SideMenu extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
     const authLinks = (
-      <div class="col-xs-12 col-sm-4">
+      <div className="col-md-12">
         <h2> {user.name} </h2>{' '}
         <p>
           {' '}
@@ -26,7 +26,7 @@ class SideMenu extends Component {
       </div>
     );
     return (
-      <div>
+      <div className="col-xs-12 col-md-3">
         <br /> {authLinks} <br />
       </div>
     );
