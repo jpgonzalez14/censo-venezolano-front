@@ -2,7 +2,12 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
 
-import { GET_ERRORS, SET_CURRENT_USER } from './types';
+import {
+  GET_ERRORS,
+  SET_CURRENT_USER,
+  GET_PERSONS,
+  PERSONS_LOADING
+} from './types';
 
 //register user
 export const registerUser = (userData, history) => dispatch => {
@@ -56,6 +61,31 @@ export const logoutUser = () => dispatch => {
   setAuthToken(false);
   //set cuurent user to empty object {}
   dispatch(setCurrentUser({}));
+};
+
+// Get all profiles
+export let getAllPersons = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get('https://censovenezolanoback.herokuapp.com/persons/listpersons')
+    .then(res =>
+      dispatch({
+        type: GET_PERSONS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PERSONS,
+        payload: null
+      })
+    );
+};
+//Profile Loading
+export let setProfileLoading = () => {
+  return {
+    type: PERSONS_LOADING
+  };
 };
 
 /*axios

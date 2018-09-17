@@ -1,28 +1,32 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getAllPersons } from '../../actions/authActions';
+import Dashboard from './Dashboard';
 
 class PersonList extends React.Component {
-  state = {
-    persons: []
-  };
-  componentWillMount() {
-    /*axios
-      .get('https://censovenezolanoback.herokuapp.com/persons/listpersons')
-      .then(res => {
-        const persons = res.data.persons.map(obj => [obj.name, obj.email]);
-        this.setState({ persons });
-      });*/
-    fetch('https://censovenezolanoback.herokuapp.com/persons/listpersons')
-      .then(res => res.json())
-      .then(findResponse => {
-        console.log(findResponse.persons);
-        this.setState({
-          persons: findResponse.persons
-        });
-      });
+  componentDidMount() {
+    this.props.getAllPersons();
   }
 
   render() {
+    let { profiles, loading } = this.props.profiles;
+    let profileItems;
+
+    if (profiles === null || loading) {
+      profileItems = (
+        <tr>
+          <th scope="row">Loading</th>
+          <td>Loading</td>
+          <td>Loading</td>
+          <td>Loading</td>
+        </tr>
+      );
+    } else {
+      profileItems = <Dashboard profiles={profiles} />;
+    }
+
     return (
       <div className="col-xs-12 col-md-9">
         <div>
@@ -40,11 +44,7 @@ class PersonList extends React.Component {
                 <th scope="col">Handle</th>
               </tr>
             </thead>
-            <tbody>
-              {this.state.persons.map(persons => (
-                <PersonCard key={persons.id} {...persons} />
-              ))}
-            </tbody>
+            <tbody>{profileItems}</tbody>
           </table>
         </div>
       </div>
@@ -53,14 +53,27 @@ class PersonList extends React.Component {
 }
 
 const PersonCard = props => {
-  return (
+  const { persons } = this.props;
+  return persons.map(
     <tr>
-      <th scope="row">{props.id}</th>
-      <td>{props.name}</td>
-      <td>{props.email}</td>
-      <td>{props.phone}</td>
+      <th scope="row">{persons.id}</th>
+      <td>{persons.name}</td>
+      <td>{persons.email}</td>
+      <td>{persons.phone}</td>
     </tr>
   );
 };
 
-export default PersonList;
+PersonList.propTypes = {
+  getAllPersons: PropTypes.func.isRequired,
+  profiles: PropTypes.object.isRequired
+};
+
+let mapStatetoProps = state => ({
+  profiles: state.profile
+});
+
+export default connect(
+  mapStatetoProps,
+  { getAllPersons }
+)(PersonList);

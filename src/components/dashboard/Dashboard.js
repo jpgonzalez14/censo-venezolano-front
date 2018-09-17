@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import PersonList from './PersonList';
+import PropTypes from 'prop-types';
+import Loading from '../common/loading';
 
-class Dashboard extends React.Component {
-  /*constructor(props) {
-    super(props);
-
-  }*/
+class Dashboard extends Component {
   render() {
-    return (
-      <div className="container-fluid">
-        <div className="row">
-          <Dashboard />
-          <PersonList />
-        </div>
-      </div>
-    );
+    let { persons } = this.props.profiles;
+    return persons.map(persons => <PersonCard key={persons.id} {...persons} />);
   }
 }
+const PersonCard = props => {
+  return (
+    <tr>
+      <th scope="row">{props.id}</th>
+      <td>{props.name}</td>
+      <td>{props.email}</td>
+      <td>{props.phone}</td>
+    </tr>
+  );
+};
+
+Dashboard.propTypes = {
+  profiles: PropTypes.array.isRequired
+};
 
 export default Dashboard;
