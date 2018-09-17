@@ -15,6 +15,7 @@
     "prettier": "^1.14.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-pagination-table": "^2.0.2",
     "react-plotly.js": "^2.2.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
