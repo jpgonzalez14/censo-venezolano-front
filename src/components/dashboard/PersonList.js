@@ -1,17 +1,24 @@
 import React from 'react';
-
 import axios from 'axios';
 
 class PersonList extends React.Component {
   state = {
     persons: []
   };
-  componentDidMount() {
-    axios
+  componentWillMount() {
+    /*axios
       .get('https://censovenezolanoback.herokuapp.com/persons/listpersons')
       .then(res => {
         const persons = res.data.persons.map(obj => [obj.name, obj.email]);
         this.setState({ persons });
+      });*/
+    fetch('https://censovenezolanoback.herokuapp.com/persons/listpersons')
+      .then(res => res.json())
+      .then(findResponse => {
+        console.log(findResponse.persons);
+        this.setState({
+          persons: findResponse.persons
+        });
       });
   }
 
@@ -35,7 +42,7 @@ class PersonList extends React.Component {
 
 const PersonCard = props => {
   return (
-    <div key={props.id}>
+    <div>
       <hr />
       <p>
         <b>Name:</b> {props.name}
