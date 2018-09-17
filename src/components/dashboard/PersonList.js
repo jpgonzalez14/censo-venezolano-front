@@ -30,7 +30,7 @@ class PersonList extends React.Component {
             <h2>Locations</h2>
           </div>
         </div>
-        <div>
+        <div className="table-wrapper-scroll-y">
           <table className="table table-striped">
             <thead>
               <tr>
