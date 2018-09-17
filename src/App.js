@@ -14,6 +14,9 @@ import Landing from './components/layout/Landing';
 //auth imports
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+//dashboard
+import PersonList from './components/dashboard/PersonList';
+
 import './App.css';
 
 if (localStorage.jwtToken) {
@@ -42,6 +45,7 @@ class App extends React.Component {
             <div className="container">
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
+              <Route exact path="/dashboard" component={PersonList} />
             </div>
             <Footer />
           </div>
