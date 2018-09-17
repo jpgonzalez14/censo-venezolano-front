@@ -1,6 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import axios from 'axios';
+//import axios from 'axios';
 
 class PieGraph extends React.Component {
   constructor(props) {

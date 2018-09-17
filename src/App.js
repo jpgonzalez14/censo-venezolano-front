@@ -15,7 +15,6 @@ import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 //dashboard
-import PersonList from './components/dashboard/PersonList';
 import Info from './components/dashboard/Info';
 import Censo from './components/censo/Censo';
 
