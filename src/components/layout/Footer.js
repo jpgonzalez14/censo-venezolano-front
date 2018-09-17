@@ -37,7 +37,7 @@ class Footer extends Component {
         </div>
 
         <div className="footer-copyright text-center py-3 text-primary-color">
-          © 2018 Copyright:
+          Created by:
           <a
             className="text-primary-color"
             href="http://juanpgonzalez.com/"

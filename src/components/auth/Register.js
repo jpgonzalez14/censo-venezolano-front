@@ -109,11 +109,11 @@ class Register extends Component {
             />
           </div>
           <div className="form-group">
-            <label className="secondary-text-color">Org</label>
+            <label className="secondary-text-color">Organizacion</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Apartment, studio, or floor"
+              placeholder="Organizacion a la que perteneces"
               name="org"
               value={this.state.org}
               onChange={this.onChange}

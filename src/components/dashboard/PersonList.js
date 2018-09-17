@@ -30,11 +30,8 @@ class PersonList extends React.Component {
     return (
       <div className="col-xs-12 col-md-8">
         <br />
-        <h2 className="primary-text-color">Filterable Table</h2>
-        <p>
-          Type something in the input field to search the table for first names,
-          last names or emails:
-        </p>
+        <h2 className="primary-text-color">Lista de personas censadas</h2>
+        <p>Aqui podras filtar algunos parametros de la informacion:</p>
         <input
           class="form-control"
           id="myInput"

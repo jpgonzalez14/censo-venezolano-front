@@ -19,10 +19,24 @@ class SideMenu extends Component {
             </p>
           </div>
         </div>
+        <br />
+        <div className="alert alert-success" role="alert">
+          Que gusto es tenerte de vuelta <strong> {user.name}</strong>, recuerda
+          que necesitamos de tu ayuda para verificar los datos de las personas
+          censadas.
+        </div>
+        <div class="alert alert-primary" role="alert">
+          Proximamente tendremos <strong>mas filtros de busqueda.</strong>
+        </div>
+        <div className="alert alert-danger" role="alert">
+          La informacion que esta viendo es <strong>confidencial</strong>,
+          recuerda que no debes compartirla.
+        </div>
       </div>
     );
     return (
       <div className="col-xs-12 col-md-4">
+        <br />
         <br /> {authLinks} <br />
       </div>
     );
