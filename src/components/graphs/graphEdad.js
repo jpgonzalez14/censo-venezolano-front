@@ -8,8 +8,13 @@ class GraphEdad extends React.Component {
       .then(res => res.json())
       .then(json => {
         let datos = json.estadisticas;
-        let edades_label = ['Niños', 'Adolescentes', 'Adultos','Viejos'];
-        let edades_datos = [datos.edad.ninos, datos.edad.adolescentes, datos.edad.adultos, datos.edad.viejos]; 
+        let edades_label = ['Niños', 'Adolescentes', 'Adultos', 'Viejos'];
+        let edades_datos = [
+          datos.edad.ninos,
+          datos.edad.adolescentes,
+          datos.edad.adultos,
+          datos.edad.viejos
+        ];
         this.setState({
           data: [
             {
@@ -26,7 +31,7 @@ class GraphEdad extends React.Component {
           },
           frames: [],
           config: {}
-        })
+        });
       });
   }
 
