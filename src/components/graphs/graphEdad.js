@@ -6,6 +6,8 @@ class GraphEdad extends React.Component {
   constructor(props) {
     super(props);
     let datos = undefined;
+    let edades_datos = undefined;
+    let edades_label = undefined;
     fetch('https://censovenezolanoback.herokuapp.com/censos/estadisticas')
       .then(res => res.json())
       .then(json => {
