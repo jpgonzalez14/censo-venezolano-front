@@ -32,6 +32,23 @@ class GraphEdad extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      data: [
+        {
+          type: 'bar',
+          x: [],
+          y: [],
+          orientation: 'h'
+        }
+      ],
+      layout: {
+        title: 'Perfil de la poblacion',
+        width: 800,
+        height: 600
+      },
+      frames: [],
+      config: {}
+    };
   }
 
   render() {

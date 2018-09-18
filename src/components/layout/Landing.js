@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PieGraph from '../graphs/PieGraph';
-import GraphEdad from '../graphs/graphEdad';
+import GraphEdad from '../graphs/GraphEdad';
 
 class Landing extends Component {
   render() {
