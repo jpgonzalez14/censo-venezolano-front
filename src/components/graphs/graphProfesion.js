@@ -54,7 +54,7 @@ class GraphProfesion extends React.Component {
                 y: profesion_datos,
                 mode: 'markers',
                 marker: {
-                  size: profesion_datos.lenght
+                  size: profesion_datos
                 }
               }
             ],
