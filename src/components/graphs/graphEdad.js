@@ -2,16 +2,18 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 //import axios from 'axios';
 
-class graphEdad extends React.Component {
+class GraphEdad extends React.Component {
   constructor(props) {
     super(props);
     let datos = undefined;
     fetch('https://censovenezolanoback.herokuapp.com/censos/estadisticas')
       .then(res => res.json())
-      .then(json => datos = json.estadisticas);
+      .then(json => {
+        datos = json.estadisticas;
+        edades_label = ['Niños', 'Adolescentes', 'Adultos','Viejos'];
+        edades_datos = [datos.edad.ninos, datos.edad.adolescentes, datos.edad.adultos, datos.edad.viejos];
+      });
     
-    let edades_label = ['Niños', 'Adolescentes', 'Adultos','Viejos'];
-    let edades_datos = [datos.edad.ninos, datos.edad.adolescentes, datos.edad.adultos, datos.edad.viejos];
     
     this.state = {
       data: [{
@@ -44,4 +46,4 @@ class graphEdad extends React.Component {
   }
 }
 
-export default graphEdad;
+export default GraphEdad;
