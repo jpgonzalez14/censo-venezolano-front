@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PieGraph from '../graphs/PieGraph';
+import graphEdad from '../graphs/graphEdad';
 
 class Landing extends Component {
   render() {
@@ -31,7 +32,7 @@ class Landing extends Component {
           </p>
         </div>
         <div className="container-fluid">
-          <PieGraph />
+          <graphEdad />
         </div>
       </div>
     );
