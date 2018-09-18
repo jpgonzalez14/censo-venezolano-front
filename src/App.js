@@ -9,6 +9,7 @@ import { logoutUser, setCurrentUser } from './actions/authActions';
 import setAuthToken from './utils/setAuthToken';
 //layout imports
 import Navbar from './components/layout/Navbar';
+import About from './components/layout/about';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 //auth imports
@@ -42,7 +43,8 @@ class App extends React.Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={About} />
+            <Route exact path="/estadisticas" component={Landing} />
             <div className="container">
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />

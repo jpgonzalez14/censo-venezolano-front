@@ -8,10 +8,11 @@ class About extends Component {
         <br />
         <div className="my-auto showcase-text">
           <h1 className="primary-text-color">VeCenso</h1>
-          <small className="secondary-text-color">
+          <h6 className="secondary-text-color">
             Primer censo de emigracion venezolana en latinoamerica.
-          </small>
-          <p className="lead mb-0 text-primary-color">
+          </h6>
+          <br />
+          <p className="lead mb-0 just">
             El Censo recolecta información sobre la población y dónde y cómo
             vive. También mide características sociodemográficas: edad de la
             población, migraciones internas, condiciones sociales, nivel
