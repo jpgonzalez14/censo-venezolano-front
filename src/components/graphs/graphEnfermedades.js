@@ -4,75 +4,109 @@ import Plot from 'react-plotly.js';
 
 class GraphEnfermedades extends React.Component {
   componentDidMount() {
+    this.mounted = true;
+
     fetch('https://censovenezolanoback.herokuapp.com/censos/estadisticas')
       .then(res => res.json())
       .then(json => {
         let datos = json.estadisticas;
-        let enfermedadeses_label = ['Sano','Diabetes','Desnutricion','Dengue','Zika','Fractura','Cardiaco','Respiratorio','Motriz', 'Mental', 'Chagas'];
-        let enfermedades_datos = [datos.enfermedades.sano, datos.enfermedades.diabetes, datos.enfermedades.desnutricion, datos.enfermedades.dengue, datos.enfermedades.zika, datos.enfermedades.fractura, datos.enfermedades.cardiaco, datos.enfermedades.respiratorio, datos.enfermedades.motriz, datos.enfermedades.mental, datos.enfermedades.chagas];
-        this.setState({
-          data: [{
-            x: enfermedadeses_label,
-            y: enfermedades_datos,
-            type: 'bar',
-            marker: {
-              color: 'rgb(142,124,195)'
-            }
-          }],
-          layout: {
-            title: 'Enfermedades',
-            font:{
-              family: 'Raleway, sans-serif'
+        let enfermedadeses_label = [
+          'Sano',
+          'Diabetes',
+          'Desnutricion',
+          'Dengue',
+          'Zika',
+          'Fractura',
+          'Cardiaco',
+          'Respiratorio',
+          'Motriz',
+          'Mental',
+          'Chagas'
+        ];
+        let enfermedades_datos = [
+          datos.enfermedades.sano,
+          datos.enfermedades.diabetes,
+          datos.enfermedades.desnutricion,
+          datos.enfermedades.dengue,
+          datos.enfermedades.zika,
+          datos.enfermedades.fractura,
+          datos.enfermedades.cardiaco,
+          datos.enfermedades.respiratorio,
+          datos.enfermedades.motriz,
+          datos.enfermedades.mental,
+          datos.enfermedades.chagas
+        ];
+        if (this.mounted) {
+          this.setState({
+            data: [
+              {
+                x: enfermedadeses_label,
+                y: enfermedades_datos,
+                type: 'bar',
+                marker: {
+                  color: 'rgb(142,124,195)'
+                }
+              }
+            ],
+            layout: {
+              title: 'Enfermedades',
+              font: {
+                family: 'Raleway, sans-serif'
+              },
+              showlegend: false,
+              xaxis: {
+                tickangle: -45
+              },
+              yaxis: {
+                zeroline: true,
+                gridwidth: 2
+              },
+              bargap: 0.05,
+              width: 800,
+              height: 600
             },
-            showlegend: false,
-            xaxis: {
-              tickangle: -45
-            },
-            yaxis: {
-              zeroline: true,
-              gridwidth: 2
-            },
-            bargap :0.05,
-            width: 800,
-            height: 600
-          },
-          frames: [],
-          config: {}
-        })
+            frames: [],
+            config: {}
+          });
+        }
       });
   }
-
+  componentWillUnmount() {
+    this.mounted = false;
+  }
   constructor(props) {
     super(props);
     this.state = {
-        data: [{
+      data: [
+        {
           x: [],
           y: [],
           type: 'bar',
           marker: {
             color: 'rgb(142,124,195)'
           }
-        }],
-        layout: {
-          title: 'Enfermedades',
-          font:{
-            family: 'Raleway, sans-serif'
-          },
-          showlegend: false,
-          xaxis: {
-            tickangle: -45
-          },
-          yaxis: {
-            zeroline: true,
-            gridwidth: 2
-          },
-          bargap :0.05,
-          width: 800,
-          height: 600
+        }
+      ],
+      layout: {
+        title: 'Enfermedades',
+        font: {
+          family: 'Raleway, sans-serif'
         },
-        frames: [],
-        config: {}
-      };
+        showlegend: false,
+        xaxis: {
+          tickangle: -45
+        },
+        yaxis: {
+          zeroline: true,
+          gridwidth: 2
+        },
+        bargap: 0.05,
+        width: 800,
+        height: 600
+      },
+      frames: [],
+      config: {}
+    };
   }
 
   render() {

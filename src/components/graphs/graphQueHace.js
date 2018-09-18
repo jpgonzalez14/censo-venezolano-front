@@ -4,38 +4,69 @@ import Plot from 'react-plotly.js';
 
 class GraphQueHace extends React.Component {
   componentDidMount() {
+    this.mounted = true;
+
     fetch('https://censovenezolanoback.herokuapp.com/censos/estadisticas')
       .then(res => res.json())
       .then(json => {
         let datos = json.estadisticas;
-        let queHace_label = ['Nada','Que le importa','Sobrevivir','Vendedor informal','Pedir dinero','Crimen','Acompañante','Trabajo Formal','Viajar', 'Llorar'];
-        let queHace_datos = [datos.queHace.nada, datos.queHace.queleimporta, datos.queHace.sobrevivir, datos.queHace.pedirdinero, datos.queHace.viajar, datos.queHace.crimen, datos.queHace.trabajoformal, datos.queHace.vendedorinformal, datos.queHace.llorar, datos.queHace.acompanante];
-        this.setState({
-          data: [{
-            type: 'bar',
-            x: queHace_datos,
-            y: queHace_label,
-            orientation: 'h',
-            marker: {
-              color: 'rgba(255,153,51,0.6)',
-              width: 1
-            }
-          }],
-          layout: {
-            title: 'Que Hace Actualmente',
-            width: 800,
-            height: 600
-          },
-          frames: [],
-          config: {}
-        })
+        let queHace_label = [
+          'Nada',
+          'Que le importa',
+          'Sobrevivir',
+          'Vendedor informal',
+          'Pedir dinero',
+          'Crimen',
+          'Acompañante',
+          'Trabajo Formal',
+          'Viajar',
+          'Llorar'
+        ];
+        let queHace_datos = [
+          datos.queHace.nada,
+          datos.queHace.queleimporta,
+          datos.queHace.sobrevivir,
+          datos.queHace.pedirdinero,
+          datos.queHace.viajar,
+          datos.queHace.crimen,
+          datos.queHace.trabajoformal,
+          datos.queHace.vendedorinformal,
+          datos.queHace.llorar,
+          datos.queHace.acompanante
+        ];
+        if (this.mounted) {
+          this.setState({
+            data: [
+              {
+                type: 'bar',
+                x: queHace_datos,
+                y: queHace_label,
+                orientation: 'h',
+                marker: {
+                  color: 'rgba(255,153,51,0.6)',
+                  width: 1
+                }
+              }
+            ],
+            layout: {
+              title: 'Que Hace Actualmente',
+              width: 800,
+              height: 600
+            },
+            frames: [],
+            config: {}
+          });
+        }
       });
   }
-
+  componentWillUnmount() {
+    this.mounted = false;
+  }
   constructor(props) {
     super(props);
     this.state = {
-        data: [{
+      data: [
+        {
           type: 'bar',
           x: [],
           y: [],
@@ -44,15 +75,16 @@ class GraphQueHace extends React.Component {
             color: 'rgba(255,153,51,0.6)',
             width: 1
           }
-        }],
-        layout: {
-          title: 'Que Hace Actualmente',
-          width: 800,
-          height: 600
-        },
-        frames: [],
-        config: {}
-      };
+        }
+      ],
+      layout: {
+        title: 'Que Hace Actualmente',
+        width: 800,
+        height: 600
+      },
+      frames: [],
+      config: {}
+    };
   }
 
   render() {

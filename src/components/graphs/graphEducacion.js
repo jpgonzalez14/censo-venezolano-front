@@ -4,45 +4,69 @@ import Plot from 'react-plotly.js';
 
 class GraphEducacion extends React.Component {
   componentDidMount() {
+    this.mounted = true;
+
     fetch('https://censovenezolanoback.herokuapp.com/censos/estadisticas')
       .then(res => res.json())
       .then(json => {
         let datos = json.estadisticas;
-        let educacion_label = ['Ninguna','Prescolar', 'Primaria', 'Secundaria', 'Bachiller', 'Superior'];
-        let educacion_datos = [datos.educacion.ninguna, datos.educacion.prescolar, datos.educacion.primaria, datos.educacion.secundaria, datos.educacion.bachiller, datos.educacion.superior];
-        this.setState({
-          data: [{
-            values: educacion_datos,
-            labels: educacion_label,
-            type: 'pie'
-          }],
-          layout: {
-            title: 'Nivel educativo',
-            height: 600,
-            width: 800
-          },
-          frames: [],
-          config: {}
-        })
+        let educacion_label = [
+          'Ninguna',
+          'Prescolar',
+          'Primaria',
+          'Secundaria',
+          'Bachiller',
+          'Superior'
+        ];
+        let educacion_datos = [
+          datos.educacion.ninguna,
+          datos.educacion.prescolar,
+          datos.educacion.primaria,
+          datos.educacion.secundaria,
+          datos.educacion.bachiller,
+          datos.educacion.superior
+        ];
+        if (this.mounted) {
+          this.setState({
+            data: [
+              {
+                values: educacion_datos,
+                labels: educacion_label,
+                type: 'pie'
+              }
+            ],
+            layout: {
+              title: 'Nivel educativo',
+              height: 600,
+              width: 800
+            },
+            frames: [],
+            config: {}
+          });
+        }
       });
   }
-
+  componentWillUnmount() {
+    this.mounted = false;
+  }
   constructor(props) {
     super(props);
     this.state = {
-        data: [{
+      data: [
+        {
           values: [],
           labels: [],
           type: 'pie'
-        }],
-        layout: {
-          title: 'Nivel educativo',
-          height: 600,
-          width: 800
-        },
-        frames: [],
-        config: {}
-      };
+        }
+      ],
+      layout: {
+        title: 'Nivel educativo',
+        height: 600,
+        width: 800
+      },
+      frames: [],
+      config: {}
+    };
   }
 
   render() {
