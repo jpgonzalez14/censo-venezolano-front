@@ -20,6 +20,7 @@ class About extends Component {
             Censo no es solo una fotografía de la población en un momento
             determinado, sino que permite generar importantes estadísticas.
             <br />
+            <br />
             Nosotros buscamos ayudar a que la personas entiendan quienes son los
             emigrantes venezolanos a partir de datos. Queremos que por medio de
             visualizacion de informacion de datos estadisticos, entidades
@@ -28,6 +29,12 @@ class About extends Component {
             <strong>unete a nosotros</strong>.
           </p>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
       </div>

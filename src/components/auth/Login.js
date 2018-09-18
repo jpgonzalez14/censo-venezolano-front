@@ -55,6 +55,7 @@ class Login extends Component {
     return (
       <div className="container-fluid">
         <br />
+        <br />
         <h1 className="primary-text-color">Login</h1>
         <br />
         <form onSubmit={this.onSubmit}>
@@ -85,6 +86,12 @@ class Login extends Component {
             Submit
           </button>
         </form>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />

@@ -88,6 +88,7 @@ class Censo extends Component {
     return (
       <div className="container-fluid">
         <br />
+        <br />
         <h1 className="primary-text-color">Ingresa tus datos:</h1>
         <small className="secondary-text-color">
           Todos los campos son obligatorios
